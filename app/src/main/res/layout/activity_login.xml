@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".LoginActivity">
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="@drawable/bg"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <EditText
+            android:id="@+id/email"
+            android:layout_width="350dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/border"
+            android:hint="     Email Address"
+            android:inputType="textEmailAddress"
+            android:maxLines="1"
+            android:textColor="@android:color/black"
+            android:textSize="16sp" />
+
+        <EditText
+            android:id="@+id/password"
+
+            android:layout_width="350dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/border"
+            android:focusableInTouchMode="true"
+            android:hint="  8 Characters"
+            android:imeOptions="actionUnspecified"
+            android:inputType="textPassword"
+            android:maxLines="1"
+            android:textColor="@android:color/black"
+            android:textColorHint="@android:color/darker_gray"
+            android:textSize="16sp" />
+
+        <Button
+            android:id="@+id/btn_login"
+            android:text="Login"
+            style="?android:textAppearanceSmall"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="60dp"
+            android:textStyle="bold"
+            android:background="@drawable/borderbtn"
+            android:textColor="#FDFEFE"/>
+
+        <Button
+            android:id="@+id/btn_signup"
+
+            android:text="Create new user"
+            android:textAllCaps="false"
+            android:textSize="15dp"
+            android:layout_width="300dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="20dip"
+            android:background="@drawable/borderbtn2"
+            android:textColor="@android:color/white"/>
+    </LinearLayout>
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_gravity="center|bottom"
+        android:layout_marginBottom="20dp"
+        android:visibility="gone" />
+</android.support.constraint.ConstraintLayout>
