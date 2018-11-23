@@ -140,7 +140,8 @@
             android:background="@drawable/borderbtn"
             android:text="Register"
             android:textColor="@android:color/white"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            />
 
 
     </LinearLayout>
