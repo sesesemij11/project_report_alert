@@ -1,5 +1,6 @@
 package com.example.asus.project_alert;
 
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -27,6 +28,10 @@ public class showAlert extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_show_alert);
+
+        //Create Action bar
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setTitle("WHAT'S HAPPEN");
 
         recyclerView = findViewById(R.id.recyclerView);
         recyclerView.setHasFixedSize(true);
