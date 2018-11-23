@@ -21,7 +21,9 @@
         <activity android:name=".report" />
         <activity android:name=".complete_alert" />
         <activity android:name=".MainUser" />
-        <activity android:name=".showAlert"></activity>
+        <activity android:name=".showAlert" />
+        <activity android:name=".Alert" />
+
     </application>
 
 </manifest>
