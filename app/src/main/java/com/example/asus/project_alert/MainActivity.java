@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
+import android.widget.RadioButton;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -28,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
     private DatabaseReference mDatabase;
     private ProgressBar mProgress;
     private FirebaseAuth mAuth;
+    private RadioButton male,female;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +39,8 @@ public class MainActivity extends AppCompatActivity {
         userPassword = (EditText) findViewById(R.id.password);
         userEmail = (EditText) findViewById(R.id.email);
         mSubmitButton = (Button) findViewById(R.id.submit);
+        male = findViewById(R.id.radioButton4);
+        female = findViewById(R.id.radioButton3);
         mProgress = new ProgressBar(this);
 
         mDatabase = FirebaseDatabase.getInstance().getReference().child("Regristation");
@@ -60,6 +64,11 @@ public class MainActivity extends AppCompatActivity {
                     Toast.makeText(getApplicationContext(), "Password too short, enter minimum 6 characters!", Toast.LENGTH_SHORT).show();
                     return;
                 }
+                if (TextUtils.isEmpty(name)){
+                    Toast.makeText(getApplicationContext(), "Enter username!", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
                 mProgress.setVisibility(View.VISIBLE);
                 startRegistration();
             }
@@ -78,6 +87,13 @@ public class MainActivity extends AppCompatActivity {
                 DatabaseReference current_user_db = mDatabase.child(user_id);
                 current_user_db.child("name").setValue(name);
                 current_user_db.child("email").setValue(email);
+                //db collect sex value
+                if (male.isChecked()) {
+                    current_user_db.child("sex").setValue("male");
+                }
+                if (female.isChecked()) {
+                    current_user_db.child("sex").setValue("female");
+                }
 
                 Toast.makeText(MainActivity.this, "createUserWithEmail:onComplete:" + task.isSuccessful(), Toast.LENGTH_SHORT).show();
                 mProgress.setVisibility(View.GONE);
