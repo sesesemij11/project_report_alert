@@ -20,7 +20,8 @@
         <activity android:name=".LoginActivity" />
         <activity android:name=".report" />
         <activity android:name=".complete_alert" />
-        <activity android:name=".MainUser"></activity>
+        <activity android:name=".MainUser" />
+        <activity android:name=".showAlert"></activity>
     </application>
 
 </manifest>

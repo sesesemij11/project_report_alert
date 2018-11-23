@@ -22,7 +22,7 @@ public class Home extends AppCompatActivity {
 
 
         //back alert_page
-        final Intent i = new Intent(this,MainActivity.class);
+        final Intent i = new Intent(this,LoginActivity.class);
         Thread timer = new Thread(){
             @Override
             public void run() {

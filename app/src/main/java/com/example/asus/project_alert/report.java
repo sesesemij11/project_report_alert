@@ -40,9 +40,6 @@ public class report extends AppCompatActivity {
         image_send = findViewById(R.id.image_send);
         text_location = findViewById(R.id.edittext_location);
 
-        //database
-        db = FirebaseDatabase.getInstance().getReference();
-
         //image click to next page
         image_send.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -70,11 +67,12 @@ public class report extends AppCompatActivity {
                     return;
                 }
 
-                //send user id to firebase and ref topic
-                auth = FirebaseAuth.getInstance();
-                currentUser = auth.getCurrentUser();
-                db = FirebaseDatabase.getInstance().getReference();
-                childRef = db.child(currentUser.getUid());
+                //db path
+                db = FirebaseDatabase.getInstance().getReference("Report");
+                //กำหนด หัวข้อ db
+                childRef = db.push();
+                listTopic = childRef.child("Topic");
+                listTopic.setValue(get_topic);
 
                 //choose button group_type
                 if (acc_eme.isChecked()) {
@@ -105,12 +103,13 @@ public class report extends AppCompatActivity {
                 }
 
                 //send data to database
-                listTopic = childRef.child("Topic");
-                listTopic.setValue(get_topic);
+
                 listDetail = childRef.child("Detail");
                 listDetail.setValue(get_detail);
+//                listDetail.push().setValue(get_detail);
                 listLocation = childRef.child("Location");
                 listLocation.setValue(get_location);
+//                listLocation.push().setValue(get_location);
 
                 //click to next page
                 Intent intent = new Intent(report.this, complete_alert.class);

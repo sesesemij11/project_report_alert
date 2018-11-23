@@ -25,7 +25,7 @@ public class complete_alert extends AppCompatActivity {
         text1.startAnimation(splash);
 
         //back alert_page
-        final Intent i = new Intent(this,report.class);
+        final Intent i = new Intent(this,MainUser.class);
         Thread timer = new Thread(){
             @Override
             public void run() {
