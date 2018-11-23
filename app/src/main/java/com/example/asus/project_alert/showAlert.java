@@ -49,7 +49,7 @@ public class showAlert extends AppCompatActivity {
             if (dataSnapshot.exists()) {
                 for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
                     Log.i("test", snapshot.toString());
-                    Log.i("test", snapshot.child("Type of Alert").getValue().toString());
+                   // Log.i("test", snapshot.child("Type of Alert").getValue().toString());
 
                     Alert alert = new Alert();
                     alert.type_of_alert = snapshot.child("Type of Alert").getValue().toString();
