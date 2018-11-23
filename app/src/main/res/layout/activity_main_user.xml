@@ -68,36 +68,14 @@
         android:text="WHAT HAPPEN ?"
         tools:ignore="UnknownId" />
 
-    <Button
-        android:id="@+id/logout"
-        android:text="Logout"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginEnd="0dp"
-        android:layout_marginRight="0dp"
-        android:layout_marginBottom="2dp" />
-    <ScrollView
-        android:layout_height="wrap_content"
-        android:layout_width="match_parent"
-        android:layout_below="@+id/whathappen"
-        android:layout_above="@+id/logout"
-        android:layout_marginTop="10dp">
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_above="@+id/logout"
-            android:layout_below="@+id/whathappen"
-            android:orientation="vertical"
-            tools:context="com.npts.boat.mainuser.Event">
 
-            <ListView
-                android:id="@+id/textView"
-                android:layout_width="match_parent"
-                android:layout_height="426dp" />
-        </LinearLayout>
-    </ScrollView>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/whathappen"
+        android:text="KUY"
+        android:id="@+id/intent"
+        android:onClick="onClickNext"/>
+
 
 </RelativeLayout>
